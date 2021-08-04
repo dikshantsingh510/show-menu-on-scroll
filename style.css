@@ -1,0 +1,266 @@
+:root {
+  --color1: #888699;
+  --color2: #ffffff;
+  --btnclr: #13a3e4;
+  --bghead: #f8f8ff;
+  --serviceDiv: #651fff;
+  --projectDiv: #251E44;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  font-family: sans-serif;
+  color: var(--color2);
+  /* background: var(--bghead); */
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+#navbar {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: var(--color2);
+  box-shadow: 10px 0 25px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  z-index: 1000;
+}
+
+#navbar.active {
+  box-shadow: none;
+}
+
+.brand {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10%;
+  font-family: cursive;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--projectDiv);
+}
+
+
+#menu {
+  width: 80px;
+  height: 35px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10%;
+}
+
+#menu::before {
+  content: 'MENU';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1.5px solid #00CDFF;
+  /*#F40089*/
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--btnclr);
+  letter-spacing: 1px;
+  display: grid;
+  place-items: center;
+}
+
+#menu.active::before {
+  opacity: 0;
+}
+
+#menu.active::after {
+  content: 'CLOSE';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1.5px solid #f40089;
+  /*#F40089*/
+  font-size: 13px;
+  font-weight: 900;
+  color: #f40089;
+  letter-spacing: 1px;
+  display: grid;
+  place-items: center;
+}
+
+#sidebar {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45em;
+  height: 0%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: var(--color2);
+  transition: 0.5s;
+  opacity: 0;
+  overflow: hidden;
+}
+
+#sidebar.active {
+  top: 100%;
+  height: 28em;
+  opacity: 1;
+}
+
+#sidebar ul {
+  margin: auto;
+  padding: 0;
+  width: 100%;
+}
+
+#sidebar ul li {
+  list-style: none;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: auto;
+  padding: 35px 0;
+}
+
+#sidebar ul li a {
+  text-decoration: none;
+  color: var(--color1);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: none;
+}
+
+#sidebar ul li a:hover {
+  color: #000;
+}
+
+#sidebar #sidebar_link {
+  width: 9.4em;
+  height: 2.5em;
+  margin: 1.4em auto;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  background: var(--btnclr);
+  color: var(--color2);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: none;
+}
+
+
+.container1 {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  background: var(--color2);
+}
+
+.services {
+  position: absolute;
+  top: 10%;
+  height: 100vh;
+  width: 100%;
+  background: var(--serviceDiv);
+  clip-path: inset(0px 0px 0px 0px round 70px 0px 0px 0px);
+}
+
+.projects {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  background: var(--projectDiv);
+  clip-path: inset(0px 0px 0px 0px round 0px 70px 0px 0px);
+
+}
+
+.title {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  font-size: 5vw;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 5px;
+  border-radius: 10px;
+  background: #FF4D92;
+}
+
+.txt {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  padding: 20% 10% 10% 10%;
+  color: var(--projectDiv);
+  font-size: 5vw;
+  text-align: center;
+}
+
+#footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 2vw;
+  font-weight: 500;
+  color: var(--bghead);
+  background: rgba(255,255,255, 0.1)
+}
+
+@media (max-width: 760px) {
+  #sidebar {
+    width: 100%;
+  }
+
+  #sidebar.active {
+    height: 26.3em;
+    border-radius: 0;
+  }
+
+  #sidebar ul li a {
+    font-size: .8rem;
+    font-weight: 500;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+  .txt{
+      font-size: 2.5rem;
+  }
+  #footer{
+    font-size: 1rem;
+  }
+
+}
